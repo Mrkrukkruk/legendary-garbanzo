@@ -1,5 +1,10 @@
 <?php
-   // test cookies if is set, display if set
+  if (isset($_COOKIE['user']) && isset($_COOKIE['pass'])) {
+  	echo 'User:'. $_COOKIE['user'] . '<br>Password:' . $_COOKIE['pass']. '<br>';
+  } else {
+  	header('Location : anotherpage.php');
+  }
+  
 ?>
 <html lang="en">
 <head>

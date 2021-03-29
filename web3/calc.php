@@ -1,16 +1,31 @@
 <html>
-<head><title>Calculation Result</title></head>
+<head>
+    <title>Calculator</title>
+</head>
 <body>
     <?php
-        # test if input is_numeric
-        if(1){
-            # test if calc is not null
-            if(1){
-                # switch statement for value of calc
-                switch(1){
-                    
+        
+        if (is_numeric($_POST['fvalue']) && is_numeric($_POST['svalue'])){
+            $fnum = ($_POST['fvalue']);
+            $snum = ($_POST['svalue']);
+            
+        if(isset($_POST['calcu'])){
+            $sign = $_POST['calcu'];
+        
+    switch($sign){
+        case $sign== "+":
+           $total = $fnum + $snum;
+            break;
+        case $sign == '-':
+           $total = $fnum - $snum;
+            break;
+        case $sign == '*':
+            $total = $fnum * $snum;
+            break;
+        case $sign == '/':
+            $total = $fnum / $snum;
                 }
-                echo "Calculation result: $result";
+                echo "Calculation result: $total";
             }
         }
         else{ echo "Invalid entry - please retry"; }
